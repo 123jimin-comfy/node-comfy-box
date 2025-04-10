@@ -1,14 +1,20 @@
 //@ts-check
 
 import { assert } from 'chai';
-import { recursiveMerge } from "../dist/index.js";
+import { assignObjectPath } from "../dist/index.js";
 
-describe("recursiveMerge", function() {
-    it("should merge objects recursively", function() {
-        const target = { a: 1, b: { c: 2, d: 3 } };
-        const source = { b: { d: 4 }, e: 5 };
+describe("assignObjectPath", function() {
+    it("should assign a value to an object path", function() {
+        /** @type {Record<string, unknown>} */
+        const obj = {};
+        
+        assignObjectPath(obj, "a.b.c", 42);
+        assert.deepEqual(obj, { a: { b: { c: 42 } } });
 
-        const result = recursiveMerge(target, source);
-        assert.deepEqual(result, { a: 1, b: { c: 2, d: 4 }, e: 5 });
+        assignObjectPath(obj, "a.b.d", 43);
+        assert.deepEqual(obj, { a: { b: { c: 42, d: 43 } } });
+
+        assignObjectPath(obj, "a.e", 44);
+        assert.deepEqual(obj, { a: { b: { c: 42, d: 43 }, e: 44 } });
     });
 });
