@@ -1,7 +1,7 @@
 {
-  "name": "placeholder-name",
+  "name": "@jiminp/comfy-box",
   "version": "0.0.1",
-  "description": "placeholder-description",
+  "description": "comfyui-client wrapper providing commonly-used utility functions",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,22 +14,27 @@
     "test": "npx mocha"
   },
   "keywords": [],
-  "author": "placeholder-author",
-  "license": "UNLICENSED",
+  "author": "jiminp",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.invalid/placeholder/placeholder.git"
+    "url": "git+https://github.com/123jimin-comfy/node-comfy-box.git"
   },
   "bugs": {
-    "url": "https://github.invalid/placeholder/placeholder/issues"
+    "url": "https://github.com/123jimin-comfy/node-comfy-box/issues"
   },
-  "homepage": "https://github.invalid/placeholder/placeholder",
+  "homepage": "https://github.com/123jimin-comfy/node-comfy-box",
   "devDependencies": {
+    "@types/node": "^22.14.0",
     "@typescript-eslint/eslint-plugin": "^8.29.1",
     "@typescript-eslint/parser": "^8.29.1",
     "chai": "^5.2.0",
     "eslint": "^9.24.0",
     "mocha": "^11.1.0",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@stable-canvas/comfyui-client": "^1.4.1",
+    "wildcard-match": "^5.1.4"
   }
 }
