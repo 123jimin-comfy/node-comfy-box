@@ -57,7 +57,8 @@ export function withPrompt<T extends BasePipe = BasePipe>(pipe: T, prompt: Promp
     if(typeof prompt === 'string') {
         pipe.prompt(prompt);
     } else {
-
+        if(prompt.positive != null) pipe.prompt(prompt.positive);
+        if(prompt.negative != null) pipe.negative(prompt.negative);
     }
 
     return pipe;
