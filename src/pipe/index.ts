@@ -1,5 +1,7 @@
 //@ts-check
 
+export * from "./create.js";
+
 import type { BasePipe, EfficientPipe } from "@stable-canvas/comfyui-client";
 import type { BasePipeContext, EfficientPipeContext, Prompt } from "../type";
 
